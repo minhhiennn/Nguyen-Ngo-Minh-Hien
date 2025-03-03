@@ -6,3 +6,109 @@ body {
   min-width: 360px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#gradientCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+#root {
+  z-index: 100;
+}
+
+.convert-container {
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0.4),
+    hsla(0, 0%, 100%, 0.1) 87.46%
+  );
+  border-radius: 24px;
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding: 38px 28px;
+  box-sizing: border-box;
+}
+
+.convert-item {
+  width: 360px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-radius: 24px;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  gap: 32px;
+}
+
+.convert-item .left input[type="number"] {
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: 28px;
+  width: 140px;
+}
+
+.convert-item .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.convert-item .right img {
+  width: 10px;
+  height: 6px;
+  margin-bottom: 2px;
+}
+
+.convert-container > button:hover {
+  color: blue;
+}
+
+.convert-container > button {
+  color: rgba(19, 21, 26, 0.3);
+  border-radius: 100px;
+  height: 64px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.show-currency-list {
+  background: #fff;
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  box-sizing: border-box;
+  top: 80px;
+  border-radius: 24px;
+  max-height: 140px;
+  overflow: auto;
+  padding: 12px 24px;
+}
+
+.show-currency-list ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 0px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.fix-string {
+  max-width: 50px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides overflowing text */
+  text-overflow: ellipsis; /* Shows "..." for overflow */
+}

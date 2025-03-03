@@ -1,27 +1,51 @@
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fancy Form</title>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
+    <!-- You may add more stuff here -->
+    <link href="style/reset.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/react-notifications/lib/notifications.css"
+    />
+    <!-- React UMD builds -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
 
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
-</head>
+    <!-- PropTypes CDN (Explicitly load before react-notifications) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"
+    ></script>
 
-<body>
+    <!-- React Transition Group CDN (Required by react-notifications) -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-transition-group@4.4.5/dist/react-transition-group.min.js"
+    ></script>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+    <!-- Babel Standalone for JSX Support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
 
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
+  <body>
+    <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+    <div id="root"></div>
+    <canvas id="gradientCanvas" />
 
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-
+    <!-- React Notifications -->
+    <script src="https://unpkg.com/react-notifications/dist/react-notifications.js"></script>
+    <script src="utils/utils.js"></script>
+    <script type="text/babel" src="components/components.js"></script>
+    <script type="text/babel" src="script.js"></script>
+    <script src="gradient.js"></script>
+  </body>
 </html>
